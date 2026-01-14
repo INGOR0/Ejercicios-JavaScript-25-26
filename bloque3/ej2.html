@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+
+        /* ENUNCIADO: Clase String. Cargar un String por teclado e implementar las siguientes funciones:
+                         Imprimir la primera mitad de los caracteres de la cadena.
+                         Imprimir el último carácter.
+                         Imprimirlo en forma inversa.
+                         Imprimir cada carácter del String separado con un guión.
+                         Imprimir la cantidad de vocales almacenadas.*/
+
+
+        // Function that returns half the string.
+        const halfString = s => s.substring(0, (Math.floor(s.length/2)));
+
+
+        // Function that returns the last character.
+        const lastChar = s => s.charAt(s.length-1); // charAt lets you get 1 character instead of a string from x to y positions.
+
+
+        /*Function that I made that returns the string inverted. Replaced by a much better one.
+
+        const invertedString = s => {
+            let result = "";
+
+            for (let i = s.length - 1; i >= 0; i--) {
+                result += s.charAt(i);
+            }
+
+            return result;
+        }*/
+
+        const invertedString = s => s.split('').reverse().join(''); // split splits the string to an array, reverse changes its order and join puts it together.
+
+        /* Function that returns each character separated by a "-". "Hand made", improved massively after.
+        const separatedCharacters = s => {
+            let result = "";
+
+            for (let i = 0; i < s.length; i++) {
+                result += s.charAt(i) + '-';
+            }
+
+            return result;
+        }*/
+
+        const separatedCharacters = s => s.split('').join('-'); // Function that takes a string, splits it and joins it with - between each character.
+
+        /* Function that counts vowels and returns said values. Done by myself.
+        const countVowels = s => {
+            const vowels = [0,0,0,0,0];
+
+            for (let i = 0; i < s.length; i++) {
+                (s.charAt(i).toLowerCase() == "a") && (vowels[0] += 1);
+                (s.charAt(i).toLowerCase() == "e") && (vowels[1] += 1);
+                (s.charAt(i).toLowerCase() == "i") && (vowels[2] += 1);
+                (s.charAt(i).toLowerCase() == "o") && (vowels[3] += 1);
+                (s.charAt(i).toLowerCase() == "u") && (vowels[4] += 1);
+
+            }
+
+            return vowels;
+        }*/
+
+
+        const countVowels = s =>                       // Convert string to lowercase and split into characters
+            [...s.toLowerCase()].reduce((acc, c) => {  // For each character in the string
+                if (acc[c] !== undefined) acc[c]++;    // If it’s a vowel, increment its count in the accumulator
+                return acc;                            // Return the accumulator for the next iteration
+            }, { a:0, e:0, i:0, o:0, u:0 });           // Initial accumulator with all vowels set to 0
+
+        
+
+        // Main function that calls the rest.
+        function main() {
+            const string = prompt('Escribe la cadena');
+            const half = halfString(string);
+            const last = lastChar(string);
+            const inverted = invertedString(string);
+            const separated = separatedCharacters(string);
+            const vowels = countVowels(string);
+
+            const vowelLines = Object.entries(vowels)  // Takes the object created to count vowels and creates a line for each.
+                .map(([v, c]) => `La cantidad de la vocal "${v}" es: ${c}.`)
+                .join('<br>');
+
+
+            let result = `La cadena es: ${string}<br>
+                            La mitad de la cadena es: ${half}<br>
+                            El último carácter es: ${last}<br>
+                            La cadena al revés es: ${inverted}<br>
+                            La cadena separada por guiones es: ${separated}<br>
+                            <br>
+                            ${vowelLines}`
+            
+            return result;
+
+        }
+
+        document.write(main())
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

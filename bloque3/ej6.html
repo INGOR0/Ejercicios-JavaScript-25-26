@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Confeccionar una página que permita seleccionar una pizza y la cantidad de unidades.
+                    Luego al presionar un botón calcular el importe a pagar.
+                    Utilizar un objeto de la clase SELECT para la selección de la pizza, pudiendo ser:
+                         Queso: $ 4.
+                         Jamón y queso: $ 6.
+                         Especial: $ 10.
+                         A la cantidad de pizzas cargarla en un objeto de la clase TEXT y en otro objeto de
+                          la clase TEXT mostrar el importe total a abonar. -->
+
+    Pizzas:
+    <select id="pizzas">
+        <option value="notSelected" selected>Sin seleccionar</option>
+        <option value="0">Queso</option>
+        <option value="1">Jamon y queso</option>
+        <option value="2">Especial</option>
+    </select>
+
+    <br><br>
+    <label for="quantity">Cantidad:</label>
+    <input id="quantity" name="quantity" type="text">
+
+    <br><br>
+    <input id="button" value="Calcular" type="button" onclick="showPrice()">
+
+    <br><br>
+    <label for="result">Precio:</label>
+    <input id="result" name="result" type="text" readonly>
+
+    <script>
+        const showPrice = () => {
+            const select = document.getElementById('pizzas');
+            const result = document.getElementById('result');
+            const quantity = Number(document.getElementById('quantity').value); // Number turns the string the user gives into a number, wheter it's int or float.
+            const prices = [4, 6, 10];
+
+            (select.value === "notSelected") ? result.value = "" :
+            isNaN(quantity) ? result.value = "Cantidad no valida" :
+            result.value = prices[select.value] * quantity + ' euros';
+        }   
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

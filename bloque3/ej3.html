@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+
+    <!-- ENUNCIADO: Formularios y Eventos. Crear un formulario con tres botones con las leyendas "1", "2" y
+                    "3". Mostrar un mensaje indicando qué botón se presionó. -->
+
+    <!-- PRIMERA SOLUCION:
+
+    <form>
+        <input id="1" type="button" value="1" onClick="show(this)">
+        <input id="2" type="button" value="2" onClick="show(this)">
+        <input id="3" type="button" value="3" onClick="show(this)">
+    </form>
+
+    <script>
+        const show = (button) => {
+            (button.value == "1") ? alert('Has pulsado el botón 1') :
+            (button.value == "2") ? alert('Has pulsado el botón 2') :
+            alert ('Has pulsado el botón 3');
+        }
+    
+    </script> -->
+
+    <form id="form">
+        <input id="1" type="button" value="1">
+        <input id="2" type="button" value="2">
+        <input id="3" type="button" value="3">
+    </form>
+
+    <script>
+        const form = document.getElementById("form");
+
+        // EventListener for the click event.
+        // Checks if it's a button being clicked.
+        // Gets the value of the event target (input tags).
+        form.addEventListener('click', (event) => {
+            event.target.type == 'button' && alert(`Has pulsado el botón ${event.target.value}`);
+        });
+
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

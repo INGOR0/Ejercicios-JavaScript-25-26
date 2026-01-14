@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7: operaciones condicionales de dos números</title>
+</head>
+<body>
+
+    <!-- ENUNCIADO: Realizar un programa que lea por teclado dos números, si el primero es mayor al segundo
+informar su suma y diferencia, en caso contrario informar el producto y la división del primero
+respecto al segundo.-->
+    
+    <script>
+        let num1,num2,sum,prod,diff,div;
+        num1 = parseFloat(prompt('Escribe el primer número'));
+        num2 = parseFloat(prompt('Escribe el segundo número'));
+        if (num1==num2) {
+            document.write('Los números son iguales.');
+        } else if (num1 > num2) {
+            sum = num1+num2;
+            diff = num1-num2;
+            document.write('La suma de los números es '+sum+' y la diferencia es '+diff+'.');
+        } else {
+            prod = num1*num2;
+            div = num1/num2;
+            document.write('El producto de los números es '+prod+' y la división '+div+'.');
+        }
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

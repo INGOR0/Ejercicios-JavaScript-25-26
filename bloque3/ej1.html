@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+
+        /* ENUNCIADO: Clase Array. Desarrollar un programa que permita ingresar un vector de 8 elementos, e
+                      informe:
+                         El valor acumulado de todos los elementos del vector.
+                         El valor acumulado de los elementos del vector que sean mayores a 36.
+                         Cantidad de valores mayores a 50.*/
+
+
+        // Function that creates and fills the array with user input.
+        function createArray(size) {
+            let array = new Array(8);
+
+            for (let i = 0; i < size; i++) {
+                array[i] = parseInt(prompt(`Escribe el elemento número ${i+1}`));
+            }
+            
+            return array;
+        }
+
+
+        //Function that calculates the total sum of the elements inside the array.
+        function calculateSum(elements, size) {
+            let sum = 0;
+
+            for (let i = 0; i < size; i++) {
+                sum += elements[i];
+            }
+
+            let result = `La suma de los valores es ${sum}.<br>`;
+            return result;
+        }
+
+
+        //Function that calculates the sum of elements above 36 or 50 (treshold can vary).
+        function calculateSumAboveX(elements, size, treshold) {
+            let sum = 0;
+
+            for (let i = 0; i < size; i++) {
+                (elements[i] > treshold) && (sum += elements[i]);
+            }
+
+            let result = `La suma de los valores por encima de ${treshold} es ${sum}.<br>`;
+            return result;
+        }
+
+
+        const size = 8;  // Variable that stores the size of the array so it's easier to change it if needed.
+
+        const array = createArray(size);
+        
+        document.write(calculateSum(array, size));
+        document.write(calculateSumAboveX(array,size,36));
+        document.write(calculateSumAboveX(array,size,50));
+
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

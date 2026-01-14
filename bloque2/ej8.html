@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8: menor entre 3 enteros</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Funciones con parámetros. Elaborar una función a la cual le enviemos tres enteros y
+        muestre el menor. -->
+
+    <script>
+        let num1, num2, num3;
+
+        do { num1 = parseInt(prompt('Escribe el primer número')) } while (isNaN(num1));
+        do { num2 = parseInt(prompt('Escribe el segundo número')) } while (isNaN(num2));
+        do { num3 = parseInt(prompt('Escribe el tercer número')) } while (isNaN(num3));
+
+        const areThereEquals = (a,b,c) => a == b || a == c || b == c;
+
+        function findTheSmallest(a,b,c) {
+            let result = areThereEquals(a,b,c) ? 'Hay números iguales.' :
+            (a < b && a < c) ? `${a} es el más pequeño.` :
+            (b < a && b < c) ? `${b} es el más pequeño.` :
+            `${c} es el más pequeño.`;
+            
+            return result;
+        }
+
+        document.write(findTheSmallest(num1,num2,num3));
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

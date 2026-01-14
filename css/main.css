@@ -1,0 +1,122 @@
+/* ===== */
+/* TITLE */
+/* ===== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+#title {
+    width: 100%;
+    background-color: rgb(83, 4, 83); /* purple banner */
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: white; /* stays white on purple banner */
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Block titles now match card theme */
+
+h2 {
+    margin: 15px;
+    color: rgb(83, 4, 83); /* purple to match card titles */
+    font-size: 20px;
+    border-left: 5px solid rgb(83, 4, 83); /* decorative left line */
+    padding-left: 10px;
+}
+
+/* ===== */
+/* CARDS */
+/* ===== */
+
+.cards {
+    display: flex;            
+    flex-direction: row;      
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 15px;
+    overflow-x: auto;        /* horizontal scroll */
+    overflow-y: visible;     /* allow shadows vertically */
+    white-space: nowrap;     
+}
+
+
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border: 2px solid rgb(142, 0, 142);
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 3px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+    transition: transform 0.2s, border-color 0.2s;
+    flex: 0 0 auto;
+
+    /* NEW */
+    white-space: normal; 
+    word-break: break-word;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(180, 0, 180);
+    /* glow stays the same size */
+}
+
+
+.card h3 {
+    margin-top: 0;
+    color: rgb(142, 0, 142); /* match neon theme */
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000; /* light gray for readability on dark bg */
+}
+
+/* ===== */
+/* PURPLE SCROLLBAR */
+/* ===== */
+
+/* Chrome, Edge, Safari */
+.cards::-webkit-scrollbar {
+    height: 8px; /* horizontal scrollbar height */
+}
+
+.cards::-webkit-scrollbar-track {
+    background: transparent; /* no background */
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background-color: rgb(142, 0, 142); /* purple */
+    border-radius: 4px;
+}
+
+.cards::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(180, 0, 180); /* brighter purple on hover */
+}
+
+/* Hide arrows */
+.cards::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Firefox */
+.cards {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(142, 0, 142) transparent;
+}

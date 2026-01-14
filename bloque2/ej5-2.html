@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5: personas censadas</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Se realizó un censo provincial y se desea procesar la información obtenida en dicho
+        censo. De cada una de las personas censadas se tiene la siguiente información: número
+        de documento, edad y sexo ('femenino' o 'masculino'). Se pide confeccionar un
+        programa que lea los datos de cada persona censada (para finalizar ingresar el valor cero
+        en el número de documento) e informar:
+
+             Cantidad total de personas censadas.
+             Cantidad de varones.
+             Cantidad de mujeres.
+             Cantidad de varones cuya edad varía entre 16 y 65 años.-->
+
+    <script>
+        const checkID = id => id == 0;  // function that checks if id is 0.
+        const checkAge = age => age < 0 || isNaN(age); // function that checks if age is negative or not a number.
+        const checkGender = gender => gender == 'M' || gender == 'F';  // function that checks if gender is 'M' or 'F'.
+
+        function censusProgram() {
+            let result, id, age, gender, people = 0, men = 0, women = 0, men1665 = 0; // last one is men between 16 and 65 years old.
+
+            do {
+            id = prompt('Escribe el número de documento'); // no parseint since the user might input the letter too.
+            if (checkID(id) && people == 0) {
+                result = 'Programa finalizado; no se han introducido datos.';
+            } else if (checkID(id) && people >0) {
+                result = `Programa finalizado. Mostrando recuento...<br>
+                            Total de personas censadas: ${people}.<br>
+                            Total de varones: ${men}.<br>
+                            Total de mujeres: ${women}.<br>
+                            Total de varones entre 16 y 65 años: ${men1665}.`;
+            } else {
+                people++;
+                age = parseInt(prompt('Escribe la edad de la persona'));
+                while (checkAge(age)) {
+                        age = parseInt(prompt('Introduce una edad válida'));
+                    }
+                gender = prompt('Introduce el género (M/F)').toUpperCase();
+                while (!checkGender(gender)) {
+                    gender = prompt('Valor inválido. Vuelve a introducir el género (M/F)').toUpperCase();
+                }
+                if (gender == 'M') {  // Counting males.
+                        men++;
+
+                        if (age >= 16 && age <= 65) {  // Counting males between 16 and 65 years old.
+                            men1665++;
+                        }
+
+
+                    } else {  // Counting women.
+                        women++;
+                    }
+            }
+            } while (!checkID(id));
+            
+            return result;
+        }
+        document.write(censusProgram());
+    </script>
+</body>
+</html>

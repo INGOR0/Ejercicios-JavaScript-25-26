@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Control SELECT. Confeccionar una página que muestre un objeto SELECT con
+                    distintos tipos de pizzas (Jamón y Queso, Muzzarella, Morrones). Al seleccionar una,
+                    mostrar en un objeto de tipo TEXT el precio de la misma.-->
+    Pizzas:
+    <select id="pizzas" onchange="showPrice()">
+        <option value="notSelected" selected>Sin seleccionar</option>
+        <option value="0">Jamón y queso</option>
+        <option value="1">Muzzarella</option>
+        <option value="2">Morrones</option>
+    </select>
+
+    <br><br>
+    <label for="price">Precio:</label>
+    <input id="price" name="price" type="text">
+
+    <script>
+
+        const showPrice = () => {
+            const select = document.getElementById('pizzas');
+            const input = document.getElementById('price');
+            const prices = ["7,50 euros", "8 euros","9 euros"];
+
+            (select.value === "notSelected") ? input.value = "" :
+            input.value = prices[select.value]
+        }
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

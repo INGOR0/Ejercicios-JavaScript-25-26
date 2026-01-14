@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: múltiplos del 8 hasta el 500</title>
+</head>
+<body>
+
+    <!-- Enunciado Mostrar los múltiplos de 8 hasta el valor 500. 
+    Debe aparecer en pantalla 8 -16 -24, etc.-->
+
+    <script>
+        let result;
+
+        function showMultiplesOf8() {
+            let max = 496;  // Maximun value to reach
+            let string = "";
+
+            for (let i = 1; i*8 <= max; i++) {  // Loop until the value reaches max.
+               
+               // If the value is the last one, don't add "-".
+
+               i*8 < max ? (string+= 8*i+'-') : (string+=8*i);
+            }
+
+            return string;  // Return the string
+        }
+
+        showMultiplesOf8()
+        document.write(showMultiplesOf8());
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

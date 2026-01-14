@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de ampliación 2: decimales a romanos</title>
+</head>
+<body>
+
+    <!-- EJERCICIO: Escribe un programa que reciba como parámetro un número 
+     entero entre 1 y 10 y retorne su representación en números romanos. Usa la estructura de
+      programación adecuada, y asegúrate de
+      que el número que introduce el usuario, está entre 1 y 10, si no es así, vuelve a pedirlo. -->
+    
+    <script>
+        let num;
+
+        num = parseInt(prompt('Escribe un número del 1 al 10'));
+        
+
+        // Se puede poner en default que vuelva a introducir el número, pero entonces
+        // sólo lo pide una vez y no hasta que el número esté entre 1 y 10.
+        
+        while (num < 1 || num > 10) {
+            num = parseInt(prompt('El número tiene que estar entre 1 y 10'));
+        }
+        
+        switch (num) {
+            case 1:
+                document.write('El número es I.');
+                break;
+
+            case 2:
+                document.write('El número es II.');
+                break;
+
+            case 3:
+                document.write('El número es III.');
+                break;
+            
+            case 4:
+                document.write('El número es IV.');
+                break;
+
+            case 5:
+                document.write('El número es V.');
+                break;
+
+            case 6:
+                document.write('El número es VI.');
+                break;
+
+            case 7:
+                document.write('El número es VII.');
+                break;
+
+            case 8:
+                document.write('El número es VIII.');
+                break;
+
+            case 9:
+                document.write('El número es IX.');
+                break;
+
+            case 10:
+                document.write('El número es X.');
+                break;
+
+            default:
+                break;
+        }
+
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

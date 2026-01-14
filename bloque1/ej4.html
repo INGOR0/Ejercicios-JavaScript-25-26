@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4: suma y producto de 4 números</title>
+</head>
+<body>
+
+    <!-- ENUNCIADO: Realizar un programa que lea cuatro valores numéricos e informar su suma y producto.-->
+    
+    <script>
+        let num1,num2,num3,num4,sum,prod;
+        num1 = parseFloat(prompt('Escribe el primer número'));
+        num2 = parseFloat(prompt('Escribe el segundo número'));
+        num3 = parseFloat(prompt('Escribe el tercer número'));
+        num4 = parseFloat(prompt('Escribe el cuarto número'));
+        sum = num1+num2+num3+num4;
+        prod = num1*num2*num3*num4;
+        document.write('La suma de los números es '+sum+' y el producto es '+prod+'.')
+    </script>
+
+    <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

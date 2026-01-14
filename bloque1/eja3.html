@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de ampliación 3: clasificación de triángulos</title>
+</head>
+<body>
+    <!-- ENUNCIADO:  Escribe un programa reciba como parámetros tres longitudes, 
+     y determine si tres longitudes forman un triángulo y, si es así, clasifique 
+     el triángulo como equilátero, isósceles o escaleno. 
+
+     Si los tres lados son iguales, es equilátero.
+     Si solo dos lados son iguales, es isósceles.
+     Si los tres lados son diferentes, es escaleno.
+     Si no forman un triángulo válido (la suma de dos lados siempre debe ser mayor que el tercero),  
+     debe devolver "No es un triángulo". -->
+
+     <script>
+        let side1,side2,side3;
+
+        side1 = parseInt(prompt('Escribe la longitud del primer lado'));
+        side2 = parseInt(prompt('Escribe la longitud del segundo lado'));
+        side3 = parseInt(prompt('Escribe la longitud del tercer lado'));
+        
+
+        if ((side1 + side2) <= side3 || (side1 + side3) <= side2 || (side2 + side3) <= side1) {
+            document.write('No es un triángulo.');
+
+        } else if (side1 == side2 && side2 == side3) {
+            document.write('El triángulo es equilátero.');
+
+        } else if (side1 == side2 || side1 == side3 || side2 == side3) {
+            document.write('El triángulo es isósceles.');
+
+        } else {
+            document.write('El triángulo es escaleno.');
+        }
+     </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

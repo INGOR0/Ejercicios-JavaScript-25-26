@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Control RADIO. Confeccionar una página que muestre dos objetos de la clase RADIO
+                    solicitando que seleccione si es mayor de 18 años o no. Al presionar un botón mostrar
+                    un alert indicando si puede ingresar al sitio o no.-->
+
+    <form>
+        <input id="over" type="radio" value="over18" name="age">Mayor de edad<br><br>
+        <input id="under" type="radio" value="under18" name="age">Menor de edad<br><br>
+        <input type="button" value="Confirmar" onclick="showAlert()">
+    </form>
+
+    <script>
+        const over = document.getElementById('over');
+        const under = document.getElementById('under');
+
+        const showAlert = () => {
+            over.checked ? alert("Puedes entrar al sitio") :
+            under.checked ? alert("No puedes entrar al sitio") :
+            alert("No has seleccionado un botón");
+        }
+    </script>
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+</body>
+</html>

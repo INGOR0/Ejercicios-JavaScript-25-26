@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <!-- ENUNCIADO: Controles FORM, BUTTON y TEXT. Cargar un nombre y un apellido en sendos text.
+                    Al presionar un botón, concatenarlos y mostrarlos en un tercer text (Tener en cuenta que
+                    podemos modificar la propiedad value de un objeto TEXT cuando ocurre un evento) -->
+
+    <form>
+        <label for="name">Nombre:</label>
+        <input id="name" name="name" type="text">
+        <br><br>
+
+        <label for="lastName">Apellido:</label>
+        <input id="lastName" name="lastName" type="text">
+        <br><br>
+
+        <input id="button" value="Concatenar" type="button">
+        <br><br>
+
+        <label for="result">Resultado:</label>
+        <input id="result" name="result" type="text" readonly> <!-- Read only so it cannot be manipulated -->
+    </form>
+
+    <script>
+        const button = document.getElementById("button");
+        const result = document.getElementById("result");
+        const name = document.getElementById("name");
+        const lastName = document.getElementById("lastName");
+
+
+        button.addEventListener('click',(e) => {
+            result.value = `${name.value} ${lastName.value}`;
+            });
+    </script>
+
+
+   <!-- HOME BUTTON (IGNORE) -->
+    <a href="../index.html" style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: rgb(142, 0, 142);
+        border: 2px solid rgb(142, 0, 142);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgb(142, 0, 142), 0 0 10px rgba(142, 0, 142, 0.5);
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='rgb(180,0,180)'; this.style.borderColor='rgb(180,0,180)';" onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='rgb(142,0,142)'; this.style.borderColor='rgb(142,0,142)';">
+        Home
+    </a>
+    
+
+</body>
+</html>
