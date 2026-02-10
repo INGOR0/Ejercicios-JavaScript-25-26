@@ -1,0 +1,1 @@
+const openWindow = () => window.open("", "Ventana nueva", `width=${screen.width},height=${(screen.height)/2},left=0,top=0,menubar=no,toolbar=no,status=yes,resizable=yes,scrollbars=yes`);

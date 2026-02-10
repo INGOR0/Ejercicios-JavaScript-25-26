@@ -1,0 +1,1 @@
+const alertUser = () => alert("Todos los elementos han cargado")
